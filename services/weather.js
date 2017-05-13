@@ -1,7 +1,7 @@
 //This module is for getting weather
 var request = require("request");
 var consoleDebuggingString = "WEATHERSERVICE:::";
-var weatherChocolate = "8ece0e93082d34c157fb30b8d73c5e60";
+var weatherChocolate = process.env.WEATHER_API_KEY;
 
 exports.getWeatherFiveDayForeCastCall = function(lat, lon, whenCompleted) {
 

@@ -5,7 +5,7 @@ var app = express()
 
 app.get('/weather/forecast', function (req, res) {
   weatherController.getWeatherFiveDayForeCastCall(19.340248, -99.180588, function(error, weather){
-      if (authDelegate.simpleApiAuthWasSuccessful(req.query["apiToken"])){
+      if (authDelegate.simpleApiAuthWasSuccessful(req.query["api_token"])){
         if (error == null){
           res.send(weather);
         } else {

@@ -143,7 +143,7 @@ getFormatedTimeStamp = function(unix_timestamp){
 
   return {
     "time": formattedTime,
-    "date": date.getDate()
+    "date": date.getDate() + ' ' + date.getMonth()
   }
 }
 

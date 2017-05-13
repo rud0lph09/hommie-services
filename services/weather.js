@@ -3,7 +3,7 @@ var request = require("request");
 var consoleDebuggingString = "WEATHERSERVICE:::";
 var weatherChocolate = "8ece0e93082d34c157fb30b8d73c5e60";
 
-exports.getWeatherFiveDayForeCastCall = function(lat, lon) {
+exports.getWeatherFiveDayForeCastCall = function(lat, lon, whenCompleted) {
 
   var options = { method: 'GET',
   url: 'http://api.openweathermap.org/data/2.5/forecast',
@@ -27,8 +27,7 @@ exports.getWeatherFiveDayForeCastCall = function(lat, lon) {
                                             lon: jsonData.city.coord.lon
                                           });
 
-     console.log(forecastData);
-     return forecastData;
+      whenCompleted(forecastData);
 
   });
 
@@ -44,7 +43,7 @@ forcastDataInit = function(weatherList, geoData){
                   },
                   forecast: []
                 };
-                console.log(weatherList);
+                // console.log(weatherList);
   for (var i in weatherList){
     let weatherData = weatherUnitInit(weatherList[i].weather[0].id,
                                   weatherList[i].weather[0].main,

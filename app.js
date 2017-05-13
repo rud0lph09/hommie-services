@@ -18,7 +18,7 @@ app.get('/weather/forecast', function (req, res) {
 
   });
 })
-
+//
 app.get('/weather/current', function (req, res) {
   weatherController.getWeatherCall(19.340248, -99.180588, function(error, weather){
     if (authDelegate.simpleApiAuthWasSuccessful(req.query["api_token"])){

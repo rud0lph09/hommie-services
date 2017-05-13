@@ -2,7 +2,7 @@
   "name": "hommie-services",
   "version": "1.0.0",
   "description": "Hommie Services API",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,8 @@
     "Services"
   ],
   "dependencies": {
-    "express": "3.x"
+    "express": "3.x",
+    "request": "^2.81.0"
   },
   "author": "Rodolfo Castillo",
   "license": "ISC"

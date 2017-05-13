@@ -9,10 +9,10 @@ app.get('/weather/forecast', function (req, res) {
         if (error == null){
           res.send(weather);
         } else {
-          res.sent({error: "Algo raro ha sucedido, intenta de nuevo mas tarde"});
+          res.send({error: "Algo raro ha sucedido, intenta de nuevo mas tarde"});
         }
       }  else {
-        res.sent({error: "No tienes acceso, consulta con el proovedor"});
+        res.send({error: "No tienes acceso, consulta con el proovedor"});
       }
 
 
@@ -25,10 +25,10 @@ app.get('/weather/current', function (req, res) {
       if (error == null){
         res.send(weather);
       } else {
-        res.sent({error: "Algo raro ha sucedido, intenta de nuevo mas tarde"});
+        res.send({error: "Algo raro ha sucedido, intenta de nuevo mas tarde"});
       }
     }  else {
-      res.sent({error: "No tienes acceso, consulta con el proovedor"});
+      res.send({error: "No tienes acceso, consulta con el proovedor"});
     }
   });
 })

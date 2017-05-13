@@ -28,6 +28,7 @@ exports.getWeatherFiveDayForeCastCall = function(lat, lon) {
                                           });
 
      console.log(forecastData);
+     return forecastData;
 
   });
 

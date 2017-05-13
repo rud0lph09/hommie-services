@@ -3,9 +3,9 @@ var authDelegate = require('./custom_modules/auth.js')
 var weatherController = require('./services/weather.js');
 var app = express()
 
-app.get('/weather/forecast:apiToken', function (req, res) {
+app.get('/weather/forecast', function (req, res) {
   weatherController.getWeatherFiveDayForeCastCall(19.340248, -99.180588, function(error, weather){
-      if (authDelegate.simpleApiAuthWasSuccessful(req.params.apiToken)){
+      if (authDelegate.simpleApiAuthWasSuccessful(req.query("apiToken"))){
         if (error == null){
           res.send(weather);
         } else {
@@ -19,9 +19,9 @@ app.get('/weather/forecast:apiToken', function (req, res) {
   });
 })
 
-app.get('/weather/current:apiToken', function (req, res) {
+app.get('/weather/current', function (req, res) {
   weatherController.getWeatherCall(19.340248, -99.180588, function(error, weather){
-    if (authDelegate.simpleApiAuthWasSuccessful(req.params.apiToken)){
+    if (authDelegate.simpleApiAuthWasSuccessful(req.query("apiToken"))){
       if (error == null){
         res.send(weather);
       } else {

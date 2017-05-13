@@ -28,7 +28,7 @@ app.get('/weather/current', function (req, res) {
         res.send({error: "Algo raro ha sucedido, intenta de nuevo mas tarde"});
       }
     }  else {
-      res.send({error: "No tienes acceso, consulta con el proovedor"});
+      res.send({error: "No tienes acceso, consulta con el proovedor "+ req.query["apiToken"]});
     }
   });
 })

@@ -27,7 +27,7 @@ exports.getWeatherFiveDayForeCastCall = function(lat, lon, whenCompleted) {
                                             lon: jsonData.city.coord.lon
                                           });
 
-      whenCompleted(forecastData);
+      whenCompleted(error,forecastData);
 
   });
 
@@ -109,7 +109,7 @@ exports.getWeatherCall = function(lat,lon, whenCompleted){
                                   lon: jsonData.coord.lon
                                 });
 
-      whenCompleted(weather);
+      whenCompleted(error, weather);
 
 
   });

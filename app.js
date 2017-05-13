@@ -3,7 +3,7 @@ var weatherController = require('./services/weather.js');
 var app = express()
 
 app.get('/', function (req, res) {
-  res.send(weatherController.getWeatherFiveDayForeCastCall(19.340248, -99.180588));
+  res.send(JSON.stringify(weatherController.getWeatherFiveDayForeCastCall(19.340248, -99.180588)));
 })
 
 app.listen(process.env.PORT || 5000, function () {

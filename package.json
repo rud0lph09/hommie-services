@@ -10,6 +10,9 @@
     "Hommie",
     "Services"
   ],
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "express": "3.x",
     "request": "^2.81.0"

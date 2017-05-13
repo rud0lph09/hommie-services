@@ -80,7 +80,7 @@ forcastDataInit = function(weatherList, geoData){
 //         "dt_txt":"2014-07-23 09:00:00"}
 //         ]}
 
-exports.getWeatherCall = function(lat,lon){
+exports.getWeatherCall = function(lat,lon, whenCompleted){
   var options = { method: 'GET',
   url: 'http://api.openweathermap.org/data/2.5/weather',
   qs:
@@ -109,7 +109,7 @@ exports.getWeatherCall = function(lat,lon){
                                   lon: jsonData.coord.lon
                                 });
 
-      console.log(weather);
+      whenCompleted(weather);
 
 
   });
